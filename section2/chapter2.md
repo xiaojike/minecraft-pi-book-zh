@@ -116,7 +116,7 @@ Geany现在在代码区下面提供了任务栏。一旦保存了程序，就可
 
 ##### Ninja-IDE
 
-Ninja-IDE相对其他IDE知名度要小一些。它是一款专为Python设计的，制作极为精良的IDE。因此，它为Python开发者设计了大量非常有用的功能，例如Python 2.7 和 Python 3 之间的兼容高亮功能。
+Ninja-IDE相对其他IDE知名度要小一些。它是一款专为Python设计的，制作极为精良的IDE。因此，它为Python开发者设计了大量非常有用的功能，例如Python 2.7 和 Python 3兼容性高亮显示的功能。
 
 目前Ninja-IDE在树莓派上的安装有点复杂。你可以在我的网站上找到安装帮助：[http://bit.ly/11BasQ0](http://bit.ly/11BasQ0)
 
