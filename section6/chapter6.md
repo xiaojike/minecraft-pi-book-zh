@@ -756,33 +756,125 @@ else语句和if语句一起使用。如果if语句的条件不匹配，也就是
 
 ##### 6.4.3 elif
 
+有些时候，在if条件为False的情况下，你希望还能用if语句做些判断。这时你就需要else if语句，在Python里被简写成elif。一个elif语句有自己的条件语句和代码块。在if语句为Flase，而elif语句条件为True的情况下，elif的代码块会被执行。如果elif条件为False，则最后的else语句会被执行。else语句在这里不是必须存在的。
 
+可以用下面的流程图总结：![title](6.4.3%20.png)
 
+举个例子，你需要设计一个程序，监控烤箱的温度，让它维持在理想的温度，也就是200摄氏度。这需要你做三个事情：
 
+* 如果烤箱的温度正好是200度，程序会告诉你这是正确的温度。
+* 如果烤箱温度低于200度，程序提醒你加热。
+* 如果温度高于200读，程序会要求减少热量。
 
+这里是代码：
 
+	1. ovenTemp = input(”Enter the oven temperature: ”)
+	2. desiredTemp = 200
+	3. if ovenTemp == desiredTemp:
+	4.     print ”Temperature is perfect”
+	5. elif ovenTemp > desiredTemp:
+	6.     print ”Temperature is too hot”
+	7. elif ovenTemp < desiredTemp:
+	8.     print ”Temperature is too cold”
+	9. else:
+	10.     print ”Something weird happened”
 
-#### 6.1 Minecraft练习
-##### 6.1.1 Hello Minecraft World
------------------------------------
-
-**知识与技巧**
-
-本练习中，我们将练习的知识和技巧:
-
-* 字符串
-* Minecraft 聊天窗口
-* 输出
-
------------------------------------
-
-**指令**
-**扩展练习**
+这段代码从上到下，判断每个条件。如果if语句和elif语句的条件都不成立，则else语句中的代码会被执行。
 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
 **警报箱**
 
-**注意**: raw_input()可以按你的想法在程序里多次使用。开发你的疯狂猜词时，用这个函数获得你想要的输入。 
+**注意**: 只要把elif语句放在if语句的后面，else语句的前面，你可以根据情况，多次使用elif语句。elif不能在没有if语句的情况下使用。
 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+**elif**
+
+*声明*
+
+在if语句为Flase，而elif语句条件为True的情况下，elif的代码块会被执行。elif必须和if语句一起使用。
+
+**表达式**
+
+	1. if condition:
+	2.     #body of if statement
+	3. elif condition:
+	4.     #body of elif
+	5. else:
+	6.     #body of else statement
+
+**语句**
+
+	1. shells = 17
+	2. if shells == 32:
+	3.     print ”You have all of the shells”
+	4. elif shells > 16:
+	5.     print ”You’ve collected more than half of the shells”
+	6. else:
+	7.     print ”You need more shells”
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+6.4.4 if语句嵌套
+
+在一个if语句中放入另一个if语句，这是可以的。这被称作if语句嵌套。在有些情况下，这是很有用的。
+
+让我们看一个if语句嵌套的例子。我们有一个简单的自动取款机，它会检查你是否有足够的钱，然后在你提款的时候，要求你确认。请注意嵌套的if语句缩进在第一个if语句的代码块里。
+
+	1. withdraw = input(”How much do you want to withdraw? ”)
+	2. balance = 1,000
+	3.
+	4. if balance >= withdraw:
+	5.     confirm = raw_input(”Are you sure you want to withdraw ” + str(withdraw) + ”?”)
+	6. 
+	7.     if confirm == ”Yes” or confirm == ”y” or confirm == ”yes”:
+	8.         print ”Here is your money”
+	9.         #some more code to give them the money
+	10. else:
+	11.     print ”You do not have enough money”
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+**警报箱**
+
+**注意**: else语句和elif语句，可以被嵌套在if语句里。if语句也可以嵌套在else和elif语句里。
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+##### 6.4.5 检查是否是字母
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+**isalpha()**
+
+*函数*
+
+isalpha()函数检查一段字符串是否只包含字母。换句话说，不能含有数字或符号。如果字符串只含有字母，isalpha()就返回True，否则返回False
+
+**表达式**
+
+	1. ”cats”.isalpha()  #true
+
+**语句**
+
+	1. ”cats”.isalpha()  #true
+	2. ”9 cats”.isalpha()  #false
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+要检查一个字符串是否仅包含字母字符，即无数字或符号，请使用 isalpha() 函数。例如：
+
+	1. ”cats”.isalpha() #true
+	2. ”9 cats”.isalpha() #false
+
+这个函数常用于验证用户的输入。例如，注册表单经常需要你提供名字，但名称里不能有数字和符号，所以我们需要检查名字是否只包含字母。这时可以用到Isalpha() 函数。
+
+因为此函数会返回一个布尔值，所以它还可以用在if语句中。下面的代码用来检查用户的输入，看用户输入的名字是否有效，即不包含数字或符号:
+
+	1. name = raw_input(”Please enter your name: ”)
+	2. 
+	3. if(name.isalpha()):
+	4.     print ”Name accepted. Thank you.”
+	5. else:
+	6.     print ”Name must not include numbers or symbols. Letters only.”
